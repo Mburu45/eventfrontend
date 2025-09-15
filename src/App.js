@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
+import HomePage from "./pages/home";
+import EventsPage from "./pages/events";
+import EventDetailsPage from "./pages/eventDetails";
+import TicketsPage from "./pages/tickets";
+import ReportsPage from "./pages/reports";
+import LoginPage from "./pages/login";
+import RegisterPage from "./pages/register";
+import ProfilePage from "./pages/ProfilePage";
+import RoleBasedDashboard from "./pages/roleBaseddashboard";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/events" element={<EventsPage />} />
+          <Route path="/events/:id" element={<EventDetailsPage />} />
+          <Route path="/tickets" element={<TicketsPage />} />
+          <Route path="/reports" element={<ReportsPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/dashboard" element={<RoleBasedDashboard />} />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
   );
 }
 

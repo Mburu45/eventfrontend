@@ -1,0 +1,60 @@
+/* General dashboard container */
+.dashboard {
+  padding: 2rem;
+  background-color: #f4f8ff; /* light blue background */
+  min-height: 100vh;
+}
+
+/* Dashboard heading */
+.dashboard h1 {
+  font-size: 2rem;
+  color: #1e3a8a; /* deep blue */
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Grid layout for stats */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Stat cards */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-top: 4px solid #2563eb; /* blue accent */
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  color: #2563eb; /* blue text */
+  margin: 0;
+}
+
+.card p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  color: #4b5563; /* gray */
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 1rem;
+  }
+  .card h3 {
+    font-size: 1.4rem;
+  }
+}
