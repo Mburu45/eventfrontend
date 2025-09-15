@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./HomePage.css";
+import "./Auth.css";
 
 const RegisterPage = () => {
   const [name, setName] = useState("");
@@ -19,55 +19,77 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="home" style={{ padding: "4rem 2rem", textAlign: "center" }}>
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit} style={{ maxWidth: "400px", margin: "0 auto" }}>
-        <div style={{ marginBottom: "1rem" }}>
-          <input
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            style={{ width: "100%", padding: "0.5rem", borderRadius: "5px", border: "1px solid #ccc" }}
-          />
+    <div className="auth-container">
+      <div className="auth-card">
+        <div className="auth-header">
+          <h1>Join SummitSpace</h1>
+          <p>Create your account and start exploring amazing events</p>
         </div>
-        <div style={{ marginBottom: "1rem" }}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            style={{ width: "100%", padding: "0.5rem", borderRadius: "5px", border: "1px solid #ccc" }}
-          />
+
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input
+              type="text"
+              className="input-field"
+              placeholder="Full Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <span className="input-icon">👤</span>
+          </div>
+
+          <div className="form-group">
+            <input
+              type="email"
+              className="input-field"
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <span className="input-icon">📧</span>
+          </div>
+
+          <div className="form-group">
+            <input
+              type="password"
+              className="input-field"
+              placeholder="Create Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <span className="input-icon">🔒</span>
+          </div>
+
+          <div className="form-group">
+            <div className="role-select">
+              <select
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+                className="input-field"
+              >
+                <option value="user">Attendee</option>
+                <option value="organizer">Event Organizer</option>
+                <option value="admin">Administrator</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" className="submit-btn">
+            Create Account
+          </button>
+        </form>
+
+        <div className="divider">
+          <span>or</span>
         </div>
-        <div style={{ marginBottom: "1rem" }}>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            style={{ width: "100%", padding: "0.5rem", borderRadius: "5px", border: "1px solid #ccc" }}
-          />
+
+        <div className="auth-links">
+          <p>Already have an account? <Link to="/login">Sign In</Link></p>
         </div>
-        <div style={{ marginBottom: "1rem" }}>
-          <select
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-            style={{ width: "100%", padding: "0.5rem", borderRadius: "5px", border: "1px solid #ccc" }}
-          >
-            <option value="user">User</option>
-            <option value="organizer">Organizer</option>
-            <option value="admin">Admin</option>
-          </select>
-        </div>
-        <button type="submit" className="cta-btn" style={{ width: "100%" }}>Register</button>
-      </form>
-      <p style={{ marginTop: "1rem" }}>
-        Already have an account? <Link to="/login">Login</Link>
-      </p>
+      </div>
     </div>
   );
 };

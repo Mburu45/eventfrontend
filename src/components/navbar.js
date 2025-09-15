@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="navbar-logo">
         <Link to="/">SummitSpace</Link>
       </div>
-      <div className="hamburger" onClick={toggleMenu}>
+      <div className={`hamburger ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>

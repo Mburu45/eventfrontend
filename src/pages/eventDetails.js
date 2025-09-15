@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import Slider from "react-slick";
 import "./HomePage.css";
 
 import event1 from "../images/event1.png";
@@ -73,27 +74,27 @@ const EventDetailsPage = () => {
         registration: "Entry fee: $20, Registration deadline: October 25, 2025, Max participants: 64",
         prizes: "1st Place: Trophy + Gaming Gear ($500), 2nd Place: Gaming Gear ($200), 3rd Place: Cash Prize ($100)",
         schedule: "November 1, 2025 - 10:00 AM to 8:00 PM, Venue: Online Platform (Discord + FIFA)",
-        gallery: [event1], // Placeholder
+        gallery: [event1, event2, event3], // FIFA images
         ctaText: "Register Now"
       },
       2: {
         id: 2,
         title: "Jazz Night",
         icon: "🎷",
-        heroImage: event2,
+        heroImage: jazz1,
         overview: "An evening of smooth jazz, live bands, and great vibes. Immerse yourself in the soulful melodies.",
         performers: "The Smooth Operators (Jazz Quartet), Midnight Melodies (Saxophone Solo), Groove Masters (Full Band)",
         venue: "Location: Downtown Jazz Club, Seating: Indoor with outdoor patio, Ticket Info: $50 per person",
         schedule: "November 20, 2023 - Opening act 7:30 PM, Main show 9:00 PM, After-party until 11:00 PM",
         highlights: "Food & drinks available, Dress code: Casual elegant",
-        gallery: [event2], // Placeholder
+        gallery: [jazz1, jazz2, jazz3], // Jazz images
         ctaText: "Book Your Spot"
       },
       3: {
         id: 3,
         title: "Hackathon",
         icon: "💻",
-        heroImage: event3,
+        heroImage: hackathon1,
         overview: "24 hours of coding, innovation, and collaboration. Build something amazing!",
         tracks: "Web Development, AI & Machine Learning, Mobile Apps, Blockchain",
         rulesFormat: "Team sizes: 2-4 members, Judging criteria: Innovation, Functionality, Presentation, Submission deadline: End of hacking period",
@@ -101,7 +102,7 @@ const EventDetailsPage = () => {
         mentorsJudges: "Industry professionals from TechCorp, Professors from Local University",
         schedule: "December 5, 2023 - Kickoff: 9:00 AM, Hacking: 10:00 AM - 10:00 AM next day, Workshops: Throughout, Final pitches: 2:00 PM",
         resources: "APIs from sponsors, Development tools (GitHub, AWS), Mentor sessions",
-        gallery: [event3], // Placeholder
+        gallery: [hackathon1, hackathon2, hackathon3], // Hackathon images
         ctaText: "Join Hackathon"
       }
     };
@@ -114,13 +115,13 @@ const EventDetailsPage = () => {
         id: 4,
         title: "Art Gallery Exhibition",
         icon: "🎨",
-        heroImage: event1,
+        heroImage: artgallery1,
         overview: "Discover breathtaking artworks from talented local artists. Immerse yourself in creativity and inspiration.",
         artists: "Featuring works by Sarah Johnson, Michael Chen, and Elena Rodriguez. A diverse collection of paintings, sculptures, and digital art.",
         venue: "Location: City Art Center, Exhibition Hall A, Admission: $15 per person",
         schedule: "January 10, 2024 - Opening Reception: 6:00 PM, Exhibition Hours: 10:00 AM - 8:00 PM daily",
         highlights: "Artist talks, guided tours, refreshments available, Photography allowed",
-        gallery: [event1], // Placeholder
+        gallery: [artgallery1, artgallery2, artgallery3], // Art gallery images
         ctaText: "Get Tickets"
       });
     }
@@ -238,9 +239,22 @@ const EventDetailsPage = () => {
       <section className="section">
         <h2>Gallery</h2>
         <div className="gallery">
-          {event.gallery.map((img, index) => (
-            <img key={index} src={img} alt={`${event.title} ${index + 1}`} className="gallery-img" />
-          ))}
+          <Slider
+            dots={true}
+            infinite={true}
+            speed={500}
+            slidesToShow={1}
+            slidesToScroll={1}
+            autoplay={true}
+            autoplaySpeed={3000}
+            arrows={true}
+          >
+            {event.gallery.map((img, index) => (
+              <div key={index} className="gallery-slide">
+                <img src={img} alt={`${event.title} ${index + 1}`} className="gallery-img" style={{ maxHeight: '300px', objectFit: 'contain' }} />
+              </div>
+            ))}
+          </Slider>
         </div>
       </section>
 
