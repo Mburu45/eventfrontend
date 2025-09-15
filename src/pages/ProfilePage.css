@@ -1,0 +1,359 @@
+/* Profile Page Styles */
+.profile-page {
+  padding: 2rem;
+  background: var(--background-dark);
+  color: white;
+  min-height: 100vh;
+}
+
+.profile-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.profile-header {
+  display: flex;
+  align-items: center;
+  background: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: var(--box-shadow);
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-right: 2rem;
+  box-shadow: var(--neon-glow);
+}
+
+.profile-info h1 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.profile-info .role {
+  color: var(--accent-purple);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.profile-info .bio {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Tabs */
+.profile-tabs {
+  display: flex;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-btn.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.tab-btn:hover {
+  color: var(--accent-color);
+}
+
+/* Tab Content */
+.tab-content {
+  background: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+}
+
+/* Personal Info */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: var(--primary-color);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.info-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.info-item {
+  margin-bottom: 1rem;
+}
+
+.info-label {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.info-value {
+  color: white;
+  font-weight: bold;
+}
+
+/* Settings */
+.settings-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Activity */
+.activity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: var(--primary-color);
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.activity-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: var(--accent-color);
+}
+
+.activity-content h4 {
+  color: var(--accent-color);
+  margin-bottom: 0.25rem;
+}
+
+.activity-content p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--primary-color);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  border-radius: 5px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.social-link:hover {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Preferences */
+.preferences {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.pref-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.pref-label {
+  color: white;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 24px;
+  background: var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-switch.active {
+  background: var(--accent-color);
+}
+
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle-switch.active::after {
+  transform: translateX(26px);
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+  margin-right: 1rem;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+  background: var(--accent-purple);
+  box-shadow: var(--neon-glow);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-avatar {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .profile-tabs {
+    flex-direction: column;
+  }
+  .tab-btn {
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+  .tab-btn.active {
+    border-left-color: var(--accent-color);
+    border-bottom-color: transparent;
+  }
+  .info-grid,
+  .settings-form {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

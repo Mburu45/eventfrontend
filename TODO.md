@@ -14,6 +14,7 @@
 - [x] Create modern auth forms: src/pages/Auth.css, update login.js and register.js with glassmorphism, neon effects, icons
 - [x] Update navbar: Modern glassmorphism design, neon effects, fixed position, animated hamburger menu, change logo to EventF
 - [x] Fix event details gallery: Make images visible with smaller sizes and proper object fit
+- [x] Style ProfilePage with modern dark theme, tabs for personal info, settings, activity, preferences
 - [ ] Test the updated application by running the app
 
 ## Followup Steps
